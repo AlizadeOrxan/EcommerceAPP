@@ -2,9 +2,7 @@ package com.example.ecommerceapp.mapper;
 
 import com.example.ecommerceapp.dto.ProductDto;
 import com.example.ecommerceapp.entity.Product;
-import com.example.ecommerceapp.entity.User;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 import java.util.List;
@@ -22,4 +20,5 @@ public interface ProductMapper {
 
 
     void mapDtoToEntity(ProductDto productDto, @MappingTarget Product product);
+
 }

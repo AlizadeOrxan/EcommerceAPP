@@ -9,4 +9,6 @@ public interface UserService {
     UserDto createUser(UserDto userDto);
 
     List<UserDto> getAll();
+
+    UserDto getById(Long id);
 }

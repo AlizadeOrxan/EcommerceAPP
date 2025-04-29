@@ -37,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
         Product product = productMapper.toEntity(productDto);
 
         product.setUser(user);
-        productRepository.save(product);
+        product = productRepository.save(product);
 
         return productMapper.toDto(product);
     }
@@ -63,8 +63,11 @@ public class ProductServiceImpl implements ProductService {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException("this product not exists"));
 
-        productMapper.mapDtoToEntity(productDto, product);
+        User user = userRepository.findById(productDto.getUserId())
+                        .orElseThrow(() -> new UserNotFoundException("User not found with id: " + productDto.getUserId()));
 
+        productMapper.mapDtoToEntity(productDto, product);
+        product.setUser(user);
         productRepository.save(product);
 
         return "product updated successfully with id: " + id;

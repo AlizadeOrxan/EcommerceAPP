@@ -24,6 +24,11 @@ repositories {
 }
 
 dependencies {
+    // JUnit 5 (Jupiter) for writing tests
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+
+    // Mockito for creating mocks
+    testImplementation 'org.mockito:mockito-core:4.0.0'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'

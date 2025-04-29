@@ -25,8 +25,7 @@ public class ProductController {
 
     @PutMapping("/products/{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    public String productUpdate(@PathVariable Long id, @RequestBody ProductDto productDto) {
-        productDto.setId(id);
+    public String productUpdate(ProductDto productDto) {
         return productService.updateProduct(productDto);
     }
 
